@@ -2,15 +2,44 @@
 @import "_variables";
 
 
-html {
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
+:root {
+  background: $background;
+  font-size: calc(.5em + 1vw);
 }
 
 body {
-  color: $yellow;
-  background: $violet;
+  min-width: 375px;
+  min-height: 812px;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: 25vh auto 12vh 8vh 1fr;
+
+  &__button-add{
+    align-self: center;
+    width: 12.71em;
+    height: 2.76em;
+  }
+
+  &__button-remove{
+    align-self: center;
+    width: 10.82em;
+    height: 1.35em;
+  }
+
+  &__counter{
+    align-self: center;
+  }
+}
+
+.water-glass{
+  grid-row: 2;
+  &__glass{
+
+  }
+  
+  &__water{
+
+  }
 }
