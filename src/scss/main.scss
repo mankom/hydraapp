@@ -1,45 +1,85 @@
 @import "_normalize";
 @import "_variables";
 
-
 :root {
   background: $background;
-  font-size: calc(.5em + 1vw);
+  font-size: calc(0.5em + 1vw);
 }
 
 body {
-  min-width: 375px;
   min-height: 812px;
+  min-width: 375px;
 }
 
 .app {
   display: grid;
-  grid-template-rows: 25vh auto 12vh 8vh 1fr;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 203px 280px 48px 47px 37px 23px;
 
-  &__button-add{
-    align-self: center;
-    width: 12.71em;
-    height: 2.76em;
+  &__button-add {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 18px;
+    font-style: normal;
+    grid-column: 2;
+    grid-row: 4;
+    height: 47px;
+    left: 79px;
+    line-height: 21px;
+    margin: 0 auto;
+    text-align: center;
+    width: 216px;
   }
 
-  &__button-remove{
-    align-self: center;
-    width: 10.82em;
-    height: 1.35em;
+  &__button-remove {
+    align-items: center;
+    background-color: $background;
+    border: none;
+    color: #F5E5E7;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    grid-column: 2;
+    grid-row: 6;
+    height: 23px;
+    left: 95px;
+    line-height: 16px;
+    margin: 0 auto;
+    text-align: center;
+    top: 615px;
+    width: 184px;
+    
   }
 
-  &__counter{
-    align-self: center;
+  &__counter {
+    align-self: center;    
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 112px;
+    font-style: normal;
+    grid-column: 2;
+    grid-row: 2;
+    line-height: 131px;
+    position: relative;
+    text-align: center;
+    z-index: 4;
   }
 }
 
-.water-glass{
+.water-glass {
+  position: relative;
+  top: 0%;
+  grid-column: 2;
   grid-row: 2;
-  &__glass{
-
+  &__glass {
   }
-  
-  &__water{
 
+  &__water {
   }
 }
