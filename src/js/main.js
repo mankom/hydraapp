@@ -19,16 +19,18 @@ if ('serviceWorker' in navigator) {
 const counter = document.querySelector('.app__counter--js');
 const addButton = document.querySelector('.app__button-add--js');
 const removeButton = document.querySelector('.app__button-remove--js');
-const numberGlasses = 0;
+var numberGlasses = 0;
 
+console.log("numberGlasses " + numberGlasses);
 if(localStorage.getItem('numberOfWaterGlasses')){
   numberGlasses = localStorage.getItem('numberOfWaterGlasses');
 }else{
   numberGlasses = 0;
+  localStorage.setItem('numberOfWaterGlasses', numberGlasses);
 }
-
+console.log("numberGlasses " + numberGlasses);
 addButton.addEventListener('click', (e)=>{
-  ++numberGlasses;
+  numberGlasses = parseInt(numberGlasses) + 1;
   localStorage.setItem('numberOfWaterGlasses', numberGlasses);
   counter.textContent = numberGlasses;
   console.log("dodano szklankę wody. W sumie wypito :" + counter.textContent + "szklanek.");
@@ -39,7 +41,7 @@ removeButton.addEventListener('click', (e)=>{
     localStorage.setItem('numberOfWaterGlasses', numberGlasses);
     counter.textContent = numberGlasses;
   }else{
-    mes
+    alert("Liczba wypitych szklanek już wynosi 0.");
   }
 
   
