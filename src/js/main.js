@@ -20,25 +20,28 @@ const counter = document.querySelector('.app__counter--js');
 const addButton = document.querySelector('.app__button-add--js');
 const removeButton = document.querySelector('.app__button-remove--js');
 var numberGlasses = 0;
+const key = new Date().toISOString().slice(0, 10);
 
 console.log("numberGlasses " + numberGlasses);
-if(localStorage.getItem('numberOfWaterGlasses')){
-  numberGlasses = localStorage.getItem('numberOfWaterGlasses');
+if(localStorage.getItem(key)){
+  numberGlasses = localStorage.getItem(key);
+  counter.textContent = numberGlasses;
 }else{
   numberGlasses = 0;
-  localStorage.setItem('numberOfWaterGlasses', numberGlasses);
+  counter.textContent = numberGlasses;
+  localStorage.setItem(key, numberGlasses);
 }
 console.log("numberGlasses " + numberGlasses);
 addButton.addEventListener('click', (e)=>{
   numberGlasses = parseInt(numberGlasses) + 1;
-  localStorage.setItem('numberOfWaterGlasses', numberGlasses);
+  localStorage.setItem(key, numberGlasses);
   counter.textContent = numberGlasses;
   console.log("dodano szklankę wody. W sumie wypito :" + counter.textContent + "szklanek.");
 })
 
 removeButton.addEventListener('click', (e)=>{
   if(--numberGlasses >= 0){
-    localStorage.setItem('numberOfWaterGlasses', numberGlasses);
+    localStorage.setItem(key, numberGlasses);
     counter.textContent = numberGlasses;
   }else{
     alert("Liczba wypitych szklanek już wynosi 0.");
